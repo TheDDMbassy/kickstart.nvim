@@ -159,7 +159,7 @@ vim.o.inccommand = 'split'
 vim.o.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.o.scrolloff = 10
+vim.o.scrolloff = 12
 
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
 -- instead raise a dialog asking if you wish to save the current file(s)
@@ -582,7 +582,11 @@ require('lazy').setup({
             if vim.fn.has 'nvim-0.11' == 1 then
               return client:supports_method(method, bufnr)
             else
-              return client.supports_method(method, { bufnr = bufnr })
+              -- return client.supports_method(method, { bufnr = bufnr })
+              -- The above line shipped with kickstart.nvim, but I don't need it as long as I stay on 0.11 or above.
+              -- For the next minor release, I'll probably get new code here anyway after I sync my fork.
+              print 'DDM has messed up, we should never get here'
+              return false
             end
           end
 
@@ -722,6 +726,7 @@ require('lazy').setup({
 
       require('mason-lspconfig').setup {
         ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
+        automatic_enable = true,
         automatic_installation = false,
         handlers = {
           function(server_name)
@@ -1021,6 +1026,7 @@ require('lazy').setup({
   -- Or use telescope!
   -- In normal mode type `<space>sh` then write `lazy.nvim-plugin`
   -- you can continue same window with `<space>sr` which resumes last telescope search
+  ---@diagnostic disable-next-line: missing-fields
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
