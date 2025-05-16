@@ -224,7 +224,8 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   end
 end
 
----@type vim.Option
+---@type vim.Option runtime path
+--- This lets the Lua LSP know that rtp is a Neovim option, which helps with autocomplete and type-checking
 local rtp = vim.opt.rtp
 rtp:prepend(lazypath)
 
