@@ -207,7 +207,10 @@ rtp:prepend(lazypath)
 -- NOTE: If you want a plugin to be installed, add it to ~/.config/nvim/lua/plugins/<new-plugin-name>.lua
 -- and it will be picked up by the `import = 'plugins'` table.
 --
-require('lazy').setup({ import = 'plugins' }, {
+require('lazy').setup({
+  { import = 'plugins' },
+  { import = 'plugins.colorschemes' },
+}, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
     -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
@@ -228,28 +231,6 @@ require('lazy').setup({ import = 'plugins' }, {
     },
   },
 })
---   {
---     'sainnhe/sonokai',
---     -- priority = 1000, -- Make sure to load this before all the other start plugins.
---     config = function()
---       -- Sonokai uses Vimscript-style settings
---       vim.g.sonokai_style = 'default' -- or 'andromeda', 'shusia', 'maia', 'espresso', 'atlantis'
---       vim.g.sonokai_enable_italic = 0 -- Disable italics
---
---       -- Load the colorscheme
---       -- vim.cmd.colorscheme 'sonokai'
---     end,
---   },
---
---
---   TODO: Try this with colorschemes!
---
---   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
---   --    This is the easiest way to modularize your config.
---   --
---   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
---   { import = 'custom.plugins' },
---   --
 --   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
 --   -- Or use telescope!
 --   -- In normal mode type `<space>sh` then write `lazy.nvim-plugin`
