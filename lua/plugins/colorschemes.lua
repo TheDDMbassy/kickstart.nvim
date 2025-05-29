@@ -1,4 +1,31 @@
 return {
+  { -- lua/plugins/rose-pine.lua
+    'rose-pine/neovim',
+    name = 'rose-pine',
+    config = function()
+      vim.cmd.colorscheme 'rose-pine'
+    end,
+  },
+  {
+    'sainnhe/sonokai',
+    -- priority = 1000, -- Make sure to load this before all the other start plugins.
+    config = function()
+      -- Sonokai uses Vimscript-style settings
+      vim.g.sonokai_style = 'andromeda' -- or 'andromeda', 'shusia', 'maia', 'espresso', 'atlantis', 'default'
+      vim.g.sonokai_enable_italic = 1 -- Enable/Disable italics
+
+      -- Load the colorscheme
+      -- vim.cmd.colorscheme 'sonokai'
+    end,
+  },
+  {
+    'tiagovla/tokyodark.nvim',
+    opts = {},
+    config = function(_, opts)
+      require('tokyodark').setup(opts)
+      -- vim.cmd.colorscheme 'tokyodark'
+    end,
+  },
   { -- You can easily change to a different colorscheme.
     -- Change the name of the colorscheme plugin below, and then
     -- change the command in the config to whatever the name of that colorscheme is.
@@ -21,14 +48,6 @@ return {
     end,
   },
   {
-    'tiagovla/tokyodark.nvim',
-    opts = {},
-    config = function(_, opts)
-      require('tokyodark').setup(opts)
-      -- vim.cmd.colorscheme 'tokyodark'
-    end,
-  },
-  {
     'sainnhe/everforest',
     lazy = false,
     priority = 1000,
@@ -39,18 +58,6 @@ return {
       vim.g.everforest_background = 'medium' -- 'soft', 'medium' (default), or 'hard'
       vim.g.everforest_better_performance = 1
       -- vim.cmd.colorscheme 'everforest'
-    end,
-  },
-  {
-    'sainnhe/sonokai',
-    -- priority = 1000, -- Make sure to load this before all the other start plugins.
-    config = function()
-      -- Sonokai uses Vimscript-style settings
-      vim.g.sonokai_style = 'andromeda' -- or 'andromeda', 'shusia', 'maia', 'espresso', 'atlantis', 'default'
-      vim.g.sonokai_enable_italic = 1 -- Enable/Disable italics
-
-      -- Load the colorscheme
-      vim.cmd.colorscheme 'sonokai'
     end,
   },
 }
