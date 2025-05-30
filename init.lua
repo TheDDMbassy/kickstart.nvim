@@ -136,6 +136,10 @@ vim.o.confirm = true
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
+-- 'x' is visual selection mode. Replace the visual selection with the paste buffer *without*
+-- yanking the replaced text.
+vim.keymap.set('x', '<leader>p', '"_dP')
+
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
