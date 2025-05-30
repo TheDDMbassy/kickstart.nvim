@@ -25,6 +25,7 @@ return { -- LSP Plugins
   -- alphabetically in the plugins.
   {
     'neovim/nvim-lspconfig',
+    priority = 1001,
     dependencies = {
       -- Automatically install LSPs and related tools to stdpath for Neovim
       -- Mason must be loaded before its dependents so we need to set it up here.
@@ -234,7 +235,7 @@ return { -- LSP Plugins
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
-        -- ts_ls = {},
+        ts_ls = {},
         --
 
         lua_ls = {
