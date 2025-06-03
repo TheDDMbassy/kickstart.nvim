@@ -14,11 +14,12 @@
     1. You can also end your macro by typing `@<register>`, to recursively call your macro for the whole file
 
 ## Tests
-- Run the tests from a file/line
-- Open the test for the current file
+TODO: Run the tests from a file/line
+TODO: Open the test for the current file
 
 ## Git navigation
-- See the commit for a particular line in Git blame, either on GitHub or in a preview window
+TODO: See the commit for a particular line in Git blame, either on GitHub or in a preview window
+TODO: Plugin for getting SHA of latest commit, for ease of cherry picking
 
 ## Searching text
 - `*` can be used to search for the word under your cursor
@@ -28,12 +29,26 @@
 - `<leader>f` is where the `conform` plugin maps the formatting keyboard shortcut
 
 ## Syntax highlighting
-- Need a yaml syntax highlighter
+TODO: Install a yaml syntax highlighter
 
 ## File creation and deletion
 - Toggle the oil plugin with the minus '-' key
-- To see the buffer ID, `set conceallevel=0`, helps for debugging
+- To see the buffer ID, `:set conceallevel=0`, helps for debugging
 
 ## LSP (Language Server Protocol) lessons
 - Mason is the plugin you use for installing LSPs, and you can debug why it's not installing a particular plugin with `:checkhealth mason`
     - This is how you figured out why the TypeScript LSP wasn't installing -- the health check showed that node wasn't installed.
+TODO: Figure out how to highlight TODOs in Markdown
+TODO: Figure out how to add spellings to dictionary with vale
+TODO: Figure out how to stop Lsp to see if it speeds up Rails development in screenings_app or apm_bundle
+
+## General wishlist
+TODO: Figure out how to yank the relative path of the current file in the buffer
+TODO: Figure out how to sort lines alphabetically
+TODO: Figure out how to add `end` after defining a function in Ruby
+
+## Useful commands
+- `:TodoQuickFix`
+- `:TodoTelescope`
+- `:LspInfo`
+- `:LspStop`
