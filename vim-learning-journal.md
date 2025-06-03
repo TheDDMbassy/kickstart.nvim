@@ -13,8 +13,9 @@
 1. Play the macro with `@<register>`, or `@@` to re-run the last macro you ran
     1. You can also end your macro by typing `@<register>`, to recursively call your macro for the whole file
 
-## Running tests
-- TO-DO
+## Tests
+- Run the tests from a file/line
+- Open the test for the current file
 
 ## Git navigation
 - See the commit for a particular line in Git blame, either on GitHub or in a preview window
