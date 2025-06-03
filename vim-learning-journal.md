@@ -1,8 +1,9 @@
 # Learning and to-do journal
 
-## Jumping back and forth (:help jumplist)
-- <Ctrl-o> jumps backward in your cursor stack
-- <Ctrl-i> jumps forward in your cursor stack
+## Navigation
+- <Ctrl-o> jumps backward in your jumplist
+- <Ctrl-i> jumps forward in your jumplist
+- m{a-z} sets a mark in the file, and `{a-z} will jump to that mark
 
 ## Macros
 1. `q` to record
@@ -11,7 +12,6 @@
 1. Return to normal mode, press `q` to end the recording
 1. Play the macro with `@<register>`, or `@@` to re-run the last macro you ran
     1. You can also end your macro by typing `@<register>`, to recursively call your macro for the whole file
-
 
 ## Running tests
 - TO-DO
@@ -25,6 +25,9 @@
 
 ## Formatting
 - `<leader>f` is where the `conform` plugin maps the formatting keyboard shortcut
+
+## Syntax highlighting
+- Need a yaml syntax highlighter
 
 ## File creation and deletion
 - Toggle the oil plugin with the minus '-' key
