@@ -126,7 +126,7 @@ vim.o.inccommand = 'split'
 vim.o.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.o.scrolloff = 15
+vim.o.scrolloff = 12
 
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
 -- instead raise a dialog asking if you wish to save the current file(s)
@@ -169,6 +169,12 @@ vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+
+-- Vertical navigation stability
+vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Move cursor up half a page, and center the cursor vertically' })
+vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Move cursor down half a page, and center the cursor vertically' })
+vim.keymap.set('n', 'n', 'nzzzv', { desc = 'Center the cursor vertically after going to the next search result' })
+vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'Center the cursor vertically after going to the previous search result' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
