@@ -5,6 +5,7 @@ return {
       dark_variant = 'main', -- main, moon, or dawn
     },
     name = 'rose-pine',
+    priority = 1000, -- Make sure to load this before all the other start plugins.
     config = function(_, opts)
       require('rose-pine').setup(opts)
       -- vim.cmd.colorscheme 'rose-pine'
@@ -12,10 +13,10 @@ return {
   },
   {
     'sainnhe/sonokai',
-    -- priority = 1000, -- Make sure to load this before all the other start plugins.
+    priority = 1000, -- Make sure to load this before all the other start plugins.
     config = function()
       -- Sonokai uses Vimscript-style settings
-      vim.g.sonokai_style = 'andromeda' -- or 'andromeda', 'shusia', 'maia', 'espresso', 'atlantis', 'default'
+      vim.g.sonokai_style = 'maia' -- or 'andromeda', 'shusia', 'maia', 'espresso', 'atlantis', 'default'
       vim.g.sonokai_enable_italic = 1 -- Enable/Disable italics
 
       -- Load the colorscheme
@@ -25,6 +26,7 @@ return {
   {
     'tiagovla/tokyodark.nvim',
     opts = {},
+    priority = 1000, -- Make sure to load this before all the other start plugins.
     config = function(_, opts)
       require('tokyodark').setup(opts)
       -- vim.cmd.colorscheme 'tokyodark'
@@ -41,14 +43,14 @@ return {
       ---@diagnostic disable-next-line: missing-fields
       require('tokyonight').setup {
         styles = {
-          comments = { italic = false }, -- Disable italics in comments
+          comments = { italic = true }, -- Disable italics in comments
         },
       }
 
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'tokyonight-night'
+      -- vim.cmd.colorscheme 'tokyonight-night'
     end,
   },
   {
@@ -59,7 +61,7 @@ return {
       -- Optionally configure and load the colorscheme
       -- directly inside the plugin declaration.
       vim.g.everforest_enable_italic = true
-      vim.g.everforest_background = 'medium' -- 'soft', 'medium' (default), or 'hard'
+      vim.g.everforest_background = 'hard' -- 'soft', 'medium' (default), or 'hard'
       vim.g.everforest_better_performance = 1
       -- vim.cmd.colorscheme 'everforest'
     end,
