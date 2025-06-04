@@ -38,13 +38,15 @@ TODO: Install a yaml syntax highlighter
 ## LSP (Language Server Protocol) lessons
 - Mason is the plugin you use for installing LSPs, and you can debug why it's not installing a particular plugin with `:checkhealth mason`
     - (This is how you figured out why the TypeScript LSP wasn't installing -- the health check showed that node wasn't installed.)
-TODO: Figure out how to add spellings to dictionary with vale
-TODO: Figure out how to stop Lsp to see if it speeds up Rails development in screenings_app or apm_bundle
+TODO: Figure out how to add spellings to dictionary with vale, or uninstall vale
+TODO: Figure out how to stop Lsp to see if it speeds up Rails development in screenings_app
+TODO: Figure out how to get LSP working in the property_app (not in apm_bundle)
 
 ## General wishlist
 TODO: Figure out how to yank the relative path of the current file in the buffer
 TODO: Figure out how to sort lines alphabetically
 TODO: Figure out how to add `end` after defining a function in Ruby
+TODO: Figure out how to install Copilot and use it occasionally
 
 ## Useful commands
 - `:TodoQuickFix`
