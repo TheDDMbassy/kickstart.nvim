@@ -38,7 +38,6 @@ TODO: Install a yaml syntax highlighter
 ## LSP (Language Server Protocol) lessons
 - Mason is the plugin you use for installing LSPs, and you can debug why it's not installing a particular plugin with `:checkhealth mason`
     - (This is how you figured out why the TypeScript LSP wasn't installing -- the health check showed that node wasn't installed.)
-TODO: Figure out how to highlight TODOs in Markdown
 TODO: Figure out how to add spellings to dictionary with vale
 TODO: Figure out how to stop Lsp to see if it speeds up Rails development in screenings_app or apm_bundle
 
