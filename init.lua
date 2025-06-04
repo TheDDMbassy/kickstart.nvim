@@ -239,6 +239,23 @@ require('lazy').setup({
     },
   },
 })
+
+local schemes = {
+  'everforest',
+  'tokyodark',
+  'rose-pine',
+  'tokyonight-night',
+}
+
+math.randomseed(os.time())
+
+local random_scheme = schemes[math.random(#schemes)]
+
+local ok, _ = pcall(vim.cmd.colorscheme, random_scheme)
+if not ok then
+  vim.notify('Failed to load colorscheme' .. random_scheme, vim.log.levels.WARN)
+end
+
 --   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
 --   -- Or use telescope!
 --   -- In normal mode type `<space>sh` then write `lazy.nvim-plugin`
