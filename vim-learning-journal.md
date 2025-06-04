@@ -65,6 +65,7 @@ current file in the buffer
 - TODO: Figure out how to sort lines alphabetically
 - TODO: Figure out how to add `end` after defining a function in Ruby
 - TODO: Figure out how to install Copilot and use it occasionally
+- TODO: Figure out triple backticks syntax, useful for commit messages
 
 ## Useful commands
 
