@@ -74,3 +74,16 @@ current file in the buffer
 - `:TodoTelescope`
 - `:LspInfo`
 - `:LspStop`
+
+## Preferred colorschemes
+
+- TODO: Turn these into a specific-colors-for-filetype kind of thing
+
+- { :rose-pine => [
+      '.lua',
+    ]
+  }
+- { :tokyodark => [
+      '.rb',
+    ]
+  }
