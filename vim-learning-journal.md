@@ -41,7 +41,7 @@ shortcut
 
 ## Syntax highlighting
 
-- TODO: Install a yaml syntax highlighter
+-
 
 ## File creation and deletion
 

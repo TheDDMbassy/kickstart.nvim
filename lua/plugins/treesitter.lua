@@ -4,7 +4,7 @@ return { -- Highlight, edit, and navigate code
   main = 'nvim-treesitter.configs', -- Sets main module to use for opts
   -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
   opts = {
-    ensure_installed = { 'diff', 'elixir', 'html', 'javascript', 'query', 'ruby', 'typescript' },
+    ensure_installed = { 'diff', 'dockerfile', 'eex', 'elixir', 'html', 'javascript', 'nginx', 'query', 'ruby', 'terraform', 'typescript', 'yaml' },
     -- Autoinstall languages that are not installed
     auto_install = true,
     highlight = {
