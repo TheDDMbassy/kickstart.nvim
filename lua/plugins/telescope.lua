@@ -1,4 +1,4 @@
-return  { -- Fuzzy Finder (files, lsp, etc)
+return { -- Fuzzy Finder (files, lsp, etc)
   'nvim-telescope/telescope.nvim',
   event = 'VimEnter',
   dependencies = {
@@ -47,11 +47,12 @@ return  { -- Fuzzy Finder (files, lsp, etc)
       -- You can put your default mappings / updates / etc. in here
       --  All the info you're looking for is in `:help telescope.setup()`
       --
-      -- defaults = {
-      --   mappings = {
-      --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-      --   },
-      -- },
+      defaults = {
+        file_ignore_patterns = {
+          '%.oh%-my%-zsh',
+          '%.zsh%_sessions',
+        },
+      },
       -- pickers = {}
       extensions = {
         ['ui-select'] = {
@@ -99,5 +100,15 @@ return  { -- Fuzzy Finder (files, lsp, etc)
     vim.keymap.set('n', '<leader>sn', function()
       builtin.find_files { cwd = vim.fn.stdpath 'config' }
     end, { desc = '[S]earch [N]eovim files' })
+
+    -- Shortcut for searching your Zsh configuration files
+    vim.keymap.set('n', '<leader>sz', function()
+      builtin.find_files {
+        hidden = true,
+        search_dirs = {
+          '~/.zsh',
+        },
+      }
+    end, { desc = '[S]earch [Z]sh files' })
   end,
 }
