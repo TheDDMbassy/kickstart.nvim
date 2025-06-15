@@ -5,7 +5,7 @@ return {
     direction = 'float',
     open_mapping = [[<c-\>]],
     float_opts = {
-      border = 'double',
+      border = 'curved',
     },
   },
 }
