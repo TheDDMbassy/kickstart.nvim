@@ -83,7 +83,7 @@ current file in the buffer
       '.lua',
     ]
   }
-- { :tokyodark => [
+- { :everforest => [
       '.rb',
     ]
   }
