@@ -63,7 +63,6 @@ apm_bundle)
 
 - TODO: Figure out how to yank the relative path of the
 current file in the buffer
-- TODO: Figure out how to sort lines alphabetically
 - TODO: Figure out how to install Copilot and use it occasionally
 - TODO: Figure out triple backticks syntax, useful for commit messages
 
