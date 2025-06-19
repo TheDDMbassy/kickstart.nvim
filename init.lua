@@ -117,6 +117,12 @@ vim.o.splitbelow = true
 vim.o.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
+-- Still using guess-indent to guess when possible, but setting defaults for my own files
+vim.opt.tabstop = 2 -- Controls how wide a tab character appears
+vim.opt.softtabstop = 2 -- Controls how many spaces are inserted when Tab is pressed
+vim.opt.shiftwidth = 2 -- Width used when indenting with <<, >>, =, etc.
+vim.opt.expandtab = true -- Insert spaces instead of real tab characters
+
 -- Preview substitutions live, as you type!
 vim.o.inccommand = 'split'
 
