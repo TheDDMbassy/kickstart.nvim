@@ -38,6 +38,7 @@ in a preview window
 
 - `<leader>f` is where the `conform` plugin maps the formatting keyboard
 shortcut
+- TODO: Saving a markdown file should trim trailing whitespace
 
 ## Syntax highlighting
 
