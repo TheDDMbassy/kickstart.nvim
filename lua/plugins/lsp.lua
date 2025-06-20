@@ -223,8 +223,9 @@ return { -- LSP Plugins
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        ruby_lsp = {},
         elixirls = {},
+        emmet_language_server = {},
+        ruby_lsp = {},
         -- clangd = {},
         -- gopls = {},
         -- pyright = {},
@@ -290,6 +291,12 @@ return { -- LSP Plugins
           end,
         },
       }
+    end,
+  },
+  {
+    'olrtg/nvim-emmet',
+    config = function()
+      vim.keymap.set({ 'n', 'v' }, '<leader>xe', require('nvim-emmet').wrap_with_abbreviation)
     end,
   },
 }
