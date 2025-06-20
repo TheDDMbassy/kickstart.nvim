@@ -61,8 +61,8 @@ apm_bundle)
 
 ## General wishlist
 
-- TODO: Figure out how to yank the relative path of the
-current file in the buffer
+- TODO: Figure out how to yank the relative path of the current file in the
+buffer, so that you can paste file names more easily with your coworkers.
 - TODO: Figure out how to install Copilot and use it occasionally
 - TODO: Figure out triple backticks syntax, useful for commit messages
 
