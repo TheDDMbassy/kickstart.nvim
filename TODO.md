@@ -26,7 +26,6 @@
 
 - TODO: See the commit for a particular line in Git blame, either on GitHub or
 in a preview window
-- TODO: Plugin for getting SHA of latest commit, for ease of cherry picking
 - TODO: Show git history of current file in descending chronological order
 
 ## Searching text
