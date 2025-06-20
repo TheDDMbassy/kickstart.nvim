@@ -249,6 +249,7 @@ require('lazy').setup({
 local schemes = {
   -- 'everforest',
   -- 'tokyodark',
+  'material',
   'rose-pine',
   'tokyonight-night',
 }
