@@ -60,7 +60,7 @@ return { -- Useful plugin to show you pending keybinds.
       { '<leader>s', group = '[S]earch & [S]ort' },
       { '<leader>si', group = '[S]ort [i]nside character pair' },
       { '<leader>sI', group = 'Reverse [S]ort [I]nside character pair' },
-      { '<leader>t', group = '[T]oggle' },
+      { '<leader>t', group = '[T]est & [T]oggle' },
       { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
     },
   },
