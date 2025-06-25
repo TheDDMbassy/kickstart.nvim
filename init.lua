@@ -249,14 +249,14 @@ require('lazy').setup({
 local schemes = {
   -- 'everforest',
   -- 'tokyodark',
-  'material',
+  -- 'material',
   'rose-pine',
-  'tokyonight-night',
+  -- 'tokyonight-night',
 }
 
 math.randomseed(os.time())
 
-local random_scheme = schemes[math.random(#schemes)]
+local random_scheme = schemes[math.random(#schemes)] -- #schemes gets the length of the schemes table
 
 local ok, _ = pcall(vim.cmd.colorscheme, random_scheme)
 if not ok then
