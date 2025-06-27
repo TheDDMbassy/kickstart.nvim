@@ -166,6 +166,15 @@ return { -- LSP Plugins
             })
           end
 
+          -- Elixir-specific keymaps, but they only work with elixir-tools installed
+          -- TODO: Figure out how to run these commands in the LSP itself, without needing the elixir-tools
+          local elixirDesc = 'LSP Elixir: '
+          if client and client.name == 'elixirls' then
+            vim.keymap.set('n', '<space>fp', ':ElixirFromPipe<cr>', { desc = elixirDesc .. '[f]rom [p]ipe', buffer = true, noremap = true })
+            vim.keymap.set('n', '<space>tp', ':ElixirToPipe<cr>', { desc = elixirDesc .. '[t]o [p]ipe', buffer = true, noremap = true })
+            vim.keymap.set('v', '<space>em', ':ElixirExpandMacro<cr>', { desc = elixirDesc .. '[e]xpand [m]acro', buffer = true, noremap = true })
+          end
+
           -- The following code creates a keymap to toggle inlay hints in your
           -- code, if the language server you are using supports them
           --
@@ -297,6 +306,16 @@ return { -- LSP Plugins
     'olrtg/nvim-emmet',
     config = function()
       vim.keymap.set({ 'n', 'v' }, '<leader>xe', require('nvim-emmet').wrap_with_abbreviation)
+    end,
+  },
+  {
+    'elixir-tools/elixir-tools.nvim',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+    },
+    event = { 'BufReadPre', 'BufNewFile' },
+    config = function()
+      require('elixir').setup()
     end,
   },
 }
