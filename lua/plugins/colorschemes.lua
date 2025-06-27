@@ -2,7 +2,8 @@ return {
   { -- lua/plugins/rose-pine.lua
     'rose-pine/neovim',
     opts = {
-      dark_variant = 'main', -- main, moon, or dawn
+      variant = 'dawn', -- auto, main, moon, or dawn (light)
+      dark_variant = 'main', -- main, moon, or dawn (light)
     },
     name = 'rose-pine',
     priority = 1000, -- Make sure to load this before all the other start plugins.
