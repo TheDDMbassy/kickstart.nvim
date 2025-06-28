@@ -23,7 +23,11 @@ return { -- Autocompletion
         {
           'rafamadriz/friendly-snippets',
           config = function()
+            local luasnipReq = require 'luasnip'
+
             require('luasnip.loaders.from_vscode').lazy_load()
+            luasnipReq.filetype_extend('heex', { 'html' })
+            luasnipReq.filetype_extend('eelixir', { 'elixir', 'html' })
           end,
         },
       },
