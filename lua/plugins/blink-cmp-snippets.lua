@@ -20,6 +20,9 @@ return { -- Autocompletion
         -- `friendly-snippets` contains a variety of premade snippets.
         --    See the README about individual language/framework/plugin snippets:
         --    https://github.com/rafamadriz/friendly-snippets
+        --
+        --    Snippets can be found at:
+        --    nvim ~/.local/share/nvim/lazy/friendly-snippets/snippets/
         {
           'rafamadriz/friendly-snippets',
           config = function()
