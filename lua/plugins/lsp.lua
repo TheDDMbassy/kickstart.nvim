@@ -166,14 +166,14 @@ return { -- LSP Plugins
             })
           end
 
-          -- Elixir-specific keymaps, but they only work with elixir-tools installed
-          -- TODO: Figure out how to run these commands in the LSP itself, without needing the elixir-tools
-          -- TODO: Make sure the client name works, might need to be ElixirLS if you're using the install from elixir-tools
+          -- Elixir-specific keymaps, but they only work with elixir-tools installed. Better to let elixir-tools
+          -- handle the installation than Mason, since they don't play well together today.
+          -- Possibly in the future, elixir-ls will work better with Mason out of the box.
           local elixirDesc = 'LSP Elixir: '
-          if client and client.name == 'elixirls' then
-            vim.keymap.set('n', '<space>fp', ':ElixirFromPipe<cr>', { desc = elixirDesc .. '[f]rom [p]ipe', buffer = true, noremap = true })
-            vim.keymap.set('n', '<space>tp', ':ElixirToPipe<cr>', { desc = elixirDesc .. '[t]o [p]ipe', buffer = true, noremap = true })
-            vim.keymap.set('v', '<space>em', ':ElixirExpandMacro<cr>', { desc = elixirDesc .. '[e]xpand [m]acro', buffer = true, noremap = true })
+          if client and client.name == 'ElixirLS' then
+            vim.keymap.set('n', '<leader>|f', ':ElixirFromPipe<cr>', { desc = elixirDesc .. '[|] [f]rom', buffer = true, noremap = true })
+            vim.keymap.set('n', '<leader>|', ':ElixirToPipe<cr>', { desc = elixirDesc .. 'to [|]', buffer = true, noremap = true })
+            vim.keymap.set('v', '<leader>em', ':ElixirExpandMacro<cr>', { desc = elixirDesc .. '[e]xpand [m]acro', buffer = true, noremap = true })
           end
 
           -- The following code creates a keymap to toggle inlay hints in your
@@ -233,7 +233,6 @@ return { -- LSP Plugins
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        elixirls = {},
         emmet_language_server = {},
         ruby_lsp = {},
         -- clangd = {},
@@ -297,12 +296,6 @@ return { -- LSP Plugins
             -- by the server configuration above. Useful when disabling
             -- certain features of an LSP (for example, turning off formatting for ts_ls)
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-
-            -- At this point, server is an empty table for elixirls, and server_name becomes a dot method
-            -- So for elixir, this is equivalent to
-            --
-            -- ```require('lspconfig').elixirls.setup({})```
-            --
             require('lspconfig')[server_name].setup(server)
           end,
         },
@@ -322,7 +315,24 @@ return { -- LSP Plugins
     },
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
-      require('elixir').setup()
+      local elixir = require 'elixir'
+
+      elixir.setup {
+        elixirls = {
+          enable = true,
+          settings = {
+            dialyzerEnabled = false,
+            enableTestLenses = false,
+            fetchDeps = false,
+          },
+        },
+        nextls = {
+          enable = false,
+        },
+        projectionist = {
+          enable = false,
+        },
+      }
     end,
   },
 }
