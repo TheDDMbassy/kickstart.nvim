@@ -168,6 +168,7 @@ return { -- LSP Plugins
 
           -- Elixir-specific keymaps, but they only work with elixir-tools installed
           -- TODO: Figure out how to run these commands in the LSP itself, without needing the elixir-tools
+          -- TODO: Make sure the client name works, might need to be ElixirLS if you're using the install from elixir-tools
           local elixirDesc = 'LSP Elixir: '
           if client and client.name == 'elixirls' then
             vim.keymap.set('n', '<space>fp', ':ElixirFromPipe<cr>', { desc = elixirDesc .. '[f]rom [p]ipe', buffer = true, noremap = true })
