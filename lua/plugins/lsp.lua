@@ -296,6 +296,12 @@ return { -- LSP Plugins
             -- by the server configuration above. Useful when disabling
             -- certain features of an LSP (for example, turning off formatting for ts_ls)
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+
+            -- At this point, server is an empty table for elixirls, and server_name becomes a dot method
+            -- So for elixir, this is equivalent to
+            --
+            -- ```require('lspconfig').elixirls.setup({})```
+            --
             require('lspconfig')[server_name].setup(server)
           end,
         },
