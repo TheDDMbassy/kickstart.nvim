@@ -287,7 +287,13 @@ return { -- LSP Plugins
 
       require('mason-lspconfig').setup {
         ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
-        automatic_enable = true,
+        automatic_enable = {
+          exclude = {
+            -- HACK: I was unable to get the `filetypes` and `init_options` working in the emmet table above, and this
+            -- was the solution :(
+            'emmet_language_server',
+          },
+        },
         automatic_installation = false,
         handlers = {
           function(server_name)
@@ -298,6 +304,30 @@ return { -- LSP Plugins
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
             require('lspconfig')[server_name].setup(server)
           end,
+        },
+      }
+
+      -- HACK: See above hack
+      require('lspconfig')['emmet_language_server'].setup {
+        filetypes = {
+          'css',
+          'eelixir',
+          'elixir',
+          'heex',
+          'html',
+          'javascript',
+          'javascriptreact',
+          'less',
+          'sass',
+          'scss',
+          'typescriptreact',
+        },
+        init_options = {
+          includeLanguages = {
+            eelixir = 'html',
+            elixir = 'html',
+            heex = 'html',
+          },
         },
       }
     end,
