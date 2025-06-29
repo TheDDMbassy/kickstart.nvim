@@ -6,9 +6,13 @@ return {
     'nvim-lua/plenary.nvim',
   },
   opts = {
-    signs = false,
+    signs = true,
     highlight = {
       comments_only = false,
+    },
+    merge_keywords = true,
+    keywords = {
+      HACK = { alt = { 'DONE' } },
     },
   },
 }
