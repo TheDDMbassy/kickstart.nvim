@@ -30,7 +30,7 @@ return { -- Autoformat
     end,
     formatters_by_ft = {
       lua = { 'stylua' },
-      elixir = { 'mix' },
+      elixir = { 'mix', 'trim_whitespace' },
       eelixir = { 'mix' },
       heex = { 'mix' },
       surface = { 'mix' },
