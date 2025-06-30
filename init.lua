@@ -148,6 +148,9 @@ vim.keymap.set('x', '<leader>p', '"_dP')
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+-- Quicker saving
+vim.keymap.set('n', '<leader>w', '<cmd>w<CR>')
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
