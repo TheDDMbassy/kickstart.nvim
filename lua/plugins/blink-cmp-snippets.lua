@@ -24,7 +24,7 @@ return { -- Autocompletion
         --    Snippets can be found at:
         --    nvim ~/.local/share/nvim/lazy/friendly-snippets/snippets/
         {
-          'rafamadriz/friendly-snippets',
+          'TheDDMbassy/friendly-snippets',
           config = function()
             local luasnipReq = require 'luasnip'
 
