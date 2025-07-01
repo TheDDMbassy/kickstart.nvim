@@ -5,6 +5,9 @@
 return {
   {
     'lewis6991/gitsigns.nvim',
+    dependencies = {
+      'akinsho/toggleterm.nvim',
+    },
     opts = {
       on_attach = function(bufnr)
         local gitsigns = require 'gitsigns'
@@ -55,6 +58,33 @@ return {
         -- Toggles
         map('n', '<leader>tb', gitsigns.toggle_current_line_blame, { desc = '[T]oggle git show [b]lame line' })
         map('n', '<leader>tD', gitsigns.preview_hunk_inline, { desc = '[T]oggle git show [D]eleted' })
+
+        -- Viewing the full git diff of the blame under cursor
+        map('n', '<leader>hv', function()
+          local file = vim.fn.expand '%'
+          local line = vim.fn.line '.'
+          local blame_output = vim.fn.systemlist(string.format('git blame -L %d,+1 --porcelain -- %s', line, file))
+          if not blame_output or #blame_output == 0 then
+            print 'No blame info available :('
+            return
+          end
+
+          local commit = blame_output[1]:match '^(%w+)%s'
+          if not commit then
+            print('Could not extract commit hash from blame: ' .. blame_output[1])
+            return
+          end
+
+          local Terminal = require('toggleterm.terminal').Terminal
+          local git_show_term = Terminal:new {
+            cmd = 'git show ' .. commit,
+            direction = 'float', -- or 'horizontal' / 'vertical'
+            close_on_exit = true,
+            hidden = true,
+          }
+
+          git_show_term:toggle()
+        end, { desc = 'git blame on current line and [v]iew diff for that SHA in toggleterm' })
       end,
       signs = { -- See `:help gitsigns` to understand what the configuration keys do
         add = { text = '+' },
