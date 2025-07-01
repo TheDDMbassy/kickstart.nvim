@@ -31,6 +31,7 @@ return { -- Autocompletion
             require('luasnip.loaders.from_vscode').lazy_load()
             luasnipReq.filetype_extend('heex', { 'html' })
             luasnipReq.filetype_extend('eelixir', { 'elixir', 'html' })
+            luasnipReq.filetype_extend('elixir', { 'eelixir' })
           end,
         },
       },
