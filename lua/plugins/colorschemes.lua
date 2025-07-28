@@ -2,7 +2,7 @@ return {
   { -- lua/plugins/rose-pine.lua
     'rose-pine/neovim',
     opts = {
-      variant = 'dawn', -- auto, main, moon, or dawn (light)
+      variant = 'main', -- auto, main, moon, or dawn (light)
       dark_variant = 'main', -- main, moon, or dawn (light)
     },
     name = 'rose-pine',
