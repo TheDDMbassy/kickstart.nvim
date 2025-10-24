@@ -250,28 +250,28 @@ return { -- LSP Plugins
         --
         --  Feel free to add/remove any LSPs here that you want to install via Mason. They will automatically be installed and setup.
         mason = {
-          -- emmet_language_server = {
-          --   filetypes = {
-          --     'css',
-          --     'eelixir',
-          --     'elixir',
-          --     'heex',
-          --     'html',
-          --     'javascript',
-          --     'javascriptreact',
-          --     'less',
-          --     'sass',
-          --     'scss',
-          --     'typescriptreact',
-          --   },
-          --   -- init_options = {
-          --   --   includeLanguages = {
-          --   --     eelixir = 'html',
-          --   --     elixir = 'html',
-          --   --     heex = 'html',
-          --   --   },
-          --   -- },
-          -- },
+          emmet_language_server = {
+            filetypes = {
+              'css',
+              'eelixir',
+              'elixir',
+              'heex',
+              'html',
+              'javascript',
+              'javascriptreact',
+              'less',
+              'sass',
+              'scss',
+              'typescriptreact',
+            },
+            -- init_options = {
+            --   includeLanguages = {
+            --     eelixir = 'html',
+            --     elixir = 'html',
+            --     heex = 'html',
+            --   },
+            -- },
+          },
           ruby_lsp = {},
           -- clangd = {},
           -- gopls = {},
