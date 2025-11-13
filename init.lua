@@ -117,6 +117,9 @@ vim.o.splitbelow = true
 vim.o.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
+-- The 80 character textwidth, wherever it comes from, is too narrow for me
+vim.o.textwidth = 120
+
 -- Still using guess-indent to guess when possible, but setting defaults for my own files
 vim.opt.tabstop = 2 -- Controls how wide a tab character appears
 vim.opt.softtabstop = 2 -- Controls how many spaces are inserted when Tab is pressed
