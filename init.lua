@@ -160,6 +160,14 @@ vim.keymap.set('n', '<leader>cf', function()
   vim.fn.setreg('+', filename)
 end, { desc = '[C]opy the current [f]ilename to clipboard' })
 
+-- Quickly paste today's date
+vim.keymap.set(
+  'n',
+  '<leader>cd',
+  'i## <C-R>=strftime("%a %b %d")<CR><CR><CR>- <Esc>',
+  { noremap = true, silent = true, desc = 'Paste the [c]urrent [d]ate, e.g. Wed Mar 27' }
+)
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
