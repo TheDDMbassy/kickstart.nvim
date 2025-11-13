@@ -272,7 +272,11 @@ return { -- LSP Plugins
             --   },
             -- },
           },
-          ruby_lsp = {},
+          ruby_lsp = {
+            cmd = {
+              vim.fn.expand '~/.asdf/shims/ruby-lsp',
+            },
+          },
           -- clangd = {},
           -- gopls = {},
           -- pyright = {},
