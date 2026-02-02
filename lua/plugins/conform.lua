@@ -33,6 +33,7 @@ return { -- Autoformat
       elixir = { 'mix', 'trim_whitespace' },
       eelixir = { 'mix' },
       heex = { 'mix' },
+      eruby = { 'prettier' },
       surface = { 'mix' },
       -- Conform can also run multiple formatters sequentially
       -- python = { "isort", "black" },

@@ -32,6 +32,8 @@ return { -- Autocompletion
             luasnipReq.filetype_extend('heex', { 'html' })
             luasnipReq.filetype_extend('eelixir', { 'elixir', 'html' })
             luasnipReq.filetype_extend('elixir', { 'eelixir' })
+            luasnipReq.filetype_extend('eruby', { 'html', 'ruby' })
+            luasnipReq.filetype_extend('html.erb', { 'html', 'ruby' })
           end,
         },
       },
