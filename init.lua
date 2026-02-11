@@ -266,11 +266,13 @@ require('lazy').setup({
   },
 })
 
+vim.o.background = 'light'
 local schemes = {
+  'gruvbox',
   -- 'everforest',
   -- 'tokyodark',
   -- 'material',
-  'rose-pine',
+  -- 'rose-pine',
   -- 'tokyonight-night',
 }
 
