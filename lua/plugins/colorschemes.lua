@@ -12,18 +12,6 @@ return {
       -- vim.cmd.colorscheme 'rose-pine'
     end,
   },
-  {
-    'sainnhe/sonokai',
-    priority = 1000, -- Make sure to load this before all the other start plugins.
-    config = function()
-      -- Sonokai uses Vimscript-style settings
-      vim.g.sonokai_style = 'maia' -- or 'andromeda', 'shusia', 'maia', 'espresso', 'atlantis', 'default'
-      vim.g.sonokai_enable_italic = 1 -- Enable/Disable italics
-
-      -- Load the colorscheme
-      -- vim.cmd.colorscheme 'sonokai'
-    end,
-  },
   { -- You can easily change to a different colorscheme.
     -- Change the name of the colorscheme plugin below, and then
     -- change the command in the config to whatever the name of that colorscheme is.
