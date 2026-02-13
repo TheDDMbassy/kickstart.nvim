@@ -21,17 +21,25 @@ return { -- Autocompletion
         --    See the README about individual language/framework/plugin snippets:
         --    https://github.com/rafamadriz/friendly-snippets
         --
-        --    Snippets can be found at:
+        --    Actual downloaded snippets can be found at:
         --    nvim ~/.local/share/nvim/lazy/friendly-snippets/snippets/
+        --
+        --    My own personal fork can be found at:
+        --    https://github.com/TheDDMbassy/friendly-snippets
+        --
+        --    ...and can be updated by pushing to a branch, and then running :Lazy
+        --    to update the plugin from inside nvim.
         {
           'TheDDMbassy/friendly-snippets',
+          -- branch = 'getEmbeddedEexWorking', -- uncomment this line to use a branch other than `main`
           config = function()
             local luasnipReq = require 'luasnip'
 
             require('luasnip.loaders.from_vscode').lazy_load()
-            luasnipReq.filetype_extend('heex', { 'html' })
-            luasnipReq.filetype_extend('eelixir', { 'elixir', 'html' })
-            luasnipReq.filetype_extend('elixir', { 'eelixir' })
+            -- It's very likely that I don't actually need to extend these filetypes,
+            -- and I could probably get LuaSnip to load these snippets properly if I
+            -- just made the right snippets JSON file for ruby and eruby, but I'm not
+            -- really going to be writing much Ruby here, so I'll leave it alone for now.
             luasnipReq.filetype_extend('eruby', { 'html', 'ruby' })
             luasnipReq.filetype_extend('html.erb', { 'html', 'ruby' })
           end,
