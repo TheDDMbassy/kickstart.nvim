@@ -364,7 +364,7 @@ return { -- LSP Plugins
         elixirls = {
           enable = true,
           settings = {
-            dialyzerEnabled = false,
+            dialyzerEnabled = true,
             enableTestLenses = false,
             fetchDeps = false,
           },
