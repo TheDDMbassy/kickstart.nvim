@@ -166,16 +166,6 @@ return { -- LSP Plugins
             })
           end
 
-          -- Elixir-specific keymaps, but they only work with elixir-tools installed. Better to let elixir-tools
-          -- handle the installation than Mason, since they don't play well together today.
-          -- Possibly in the future, elixir-ls will work better with Mason out of the box.
-          local elixirDesc = 'LSP Elixir: '
-          if client and client.name == 'ElixirLS' then
-            vim.keymap.set('n', '<leader>|f', ':ElixirFromPipe<cr>', { desc = elixirDesc .. '[|] [f]rom', buffer = true, noremap = true })
-            vim.keymap.set('n', '<leader>|', ':ElixirToPipe<cr>', { desc = elixirDesc .. 'to [|]', buffer = true, noremap = true })
-            vim.keymap.set('v', '<leader>em', ':ElixirExpandMacro<cr>', { desc = elixirDesc .. '[e]xpand [m]acro', buffer = true, noremap = true })
-          end
-
           -- The following code creates a keymap to toggle inlay hints in your
           -- code, if the language server you are using supports them
           --
@@ -368,6 +358,7 @@ return { -- LSP Plugins
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
       local elixir = require 'elixir'
+      local elixirls = require 'elixir.elixirls'
 
       elixir.setup {
         elixirls = {
@@ -377,6 +368,12 @@ return { -- LSP Plugins
             enableTestLenses = false,
             fetchDeps = false,
           },
+          on_attach = function(client, bufnr)
+            local elixirDesc = 'LSP Elixir: '
+            vim.keymap.set('n', '<leader>fp', ':ElixirFromPipe<cr>', { desc = elixirDesc .. '[f]rom [p]ipe |', buffer = true, noremap = true })
+            vim.keymap.set('n', '<leader>tp', ':ElixirToPipe<cr>', { desc = elixirDesc .. '[t]o [p]ipe |', buffer = true, noremap = true })
+            vim.keymap.set('v', '<leader>em', ':ElixirExpandMacro<cr>', { desc = elixirDesc .. '[e]xpand [m]acro', buffer = true, noremap = true })
+          end,
         },
         nextls = {
           enable = false,
